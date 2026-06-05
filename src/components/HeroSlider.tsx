@@ -19,7 +19,7 @@ export function HeroSlider() {
   const prev = () => setI((p) => (p - 1 + slides.length) % slides.length);
 
   return (
-    <section id="home" className="relative h-[60vh] md:h-[88vh] min-h-[400px] md:min-h-[600px] overflow-hidden">
+    <section id="home" className="relative h-[75vh] md:h-[92vh] min-h-[500px] md:min-h-[700px] overflow-hidden pt-16 md:pt-0">
       <AnimatePresence mode="wait">
         <motion.div
           key={i}
@@ -59,20 +59,20 @@ export function HeroSlider() {
               <Sparkles className="w-4 h-4 text-primary" />
               <span className="text-sm font-medium">Premium Beauty Store</span>
             </div>
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight mb-6">
-              <span className="text-gradient">{slide.title}</span>
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight mb-6 text-white">
+              {slide.title}
             </h1>
-            <p className="text-lg md:text-2xl text-muted-foreground mb-8 max-w-xl">
+            <p className="text-lg md:text-2xl text-white/90 mb-8 max-w-xl">
               {slide.subtitle}
             </p>
-            <div className="flex flex-wrap gap-4">
+            <div className="flex items-center gap-3 md:gap-4">
               <button
                 onClick={() => {
                   document
                     .getElementById("lipstick")
                     ?.scrollIntoView({ behavior: "smooth" });
                 }}
-                className="px-8 py-4 gradient-primary text-primary-foreground rounded-full font-semibold shadow-glow hover:scale-105 transition-transform"
+                className="px-4 md:px-8 py-3 md:py-4 gradient-primary text-primary-foreground rounded-full text-sm md:text-base font-semibold shadow-glow hover:scale-105 transition-transform whitespace-nowrap"
               >
                 {slide.cta}
               </button>
@@ -82,7 +82,7 @@ export function HeroSlider() {
                     .getElementById("perfume")
                     ?.scrollIntoView({ behavior: "smooth" })
                 }
-                className="px-8 py-4 bg-background/60 backdrop-blur-md border border-primary/30 rounded-full font-semibold hover:bg-background transition"
+                className="px-4 md:px-8 py-3 md:py-4 bg-background/60 backdrop-blur-md border border-primary/30 rounded-full text-sm md:text-base font-semibold hover:bg-background transition whitespace-nowrap"
               >
                 Browse Categories
               </button>

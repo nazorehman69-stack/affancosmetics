@@ -1,10 +1,12 @@
-import { Home, Search, ShoppingBag, MessageCircle, Heart } from "lucide-react";
+import { Home, Search, ShoppingBag, MessageCircle, Heart, User } from "lucide-react";
 import { useCart } from "@/lib/cart-store";
 import { useSettings } from "@/lib/use-settings";
+import { useNavigate } from "@tanstack/react-router";
 
 export function BottomBar({ onSearch }: { onSearch: () => void }) {
   const { count, open, wishCount, openWish } = useCart();
   const { settings } = useSettings();
+  const navigate = useNavigate();
   const num = (settings.social?.whatsapp || settings.info?.phone || "923310292105").replace(/\D/g, "");
   const wa = `https://wa.me/${num}`;
   const items = [
@@ -22,6 +24,11 @@ export function BottomBar({ onSearch }: { onSearch: () => void }) {
       badge: count,
     },
     { icon: Heart, label: "Wishlist", onClick: openWish, badge: wishCount },
+    {
+      icon: User,
+      label: "Login",
+      onClick: () => navigate({ to: "/auth" }),
+    },
     {
       icon: MessageCircle,
       label: "WhatsApp",

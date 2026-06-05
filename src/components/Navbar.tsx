@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Menu, X, Search, ShoppingBag, Heart, User, Sparkles, Shield } from "lucide-react";
+import { Menu, X, Search, ShoppingBag, Heart, User, Sparkles, Shield, Home } from "lucide-react";
 import { useCart } from "@/lib/cart-store";
 import { useShop } from "@/lib/use-shop";
 import { Link } from "@tanstack/react-router";
@@ -148,8 +148,15 @@ export function Navbar({ onSearch }: { onSearch: () => void }) {
                   onClick={() => scrollTo("home")}
                   className="text-left px-4 py-3 rounded-lg hover:bg-secondary font-medium flex items-center gap-3"
                 >
-                  <User className="w-4 h-4 text-primary" /> Home
+                  <Home className="w-4 h-4 text-primary" /> Home
                 </button>
+                <Link
+                  to="/auth"
+                  onClick={() => setOpen(false)}
+                  className="text-left px-4 py-3 rounded-lg hover:bg-secondary font-medium flex items-center gap-3"
+                >
+                  <User className="w-4 h-4 text-primary" /> Login / Register
+                </Link>
                 {categories.map((c) => (
                   <button
                     key={c.id}
