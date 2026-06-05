@@ -19,7 +19,7 @@ export function HeroSlider() {
   const prev = () => setI((p) => (p - 1 + slides.length) % slides.length);
 
   return (
-    <section id="home" className="relative h-[88vh] min-h-[600px] overflow-hidden">
+    <section id="home" className="relative h-[60vh] md:h-[88vh] min-h-[400px] md:min-h-[600px] overflow-hidden">
       <AnimatePresence mode="wait">
         <motion.div
           key={i}
@@ -53,7 +53,7 @@ export function HeroSlider() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="max-w-2xl pt-20"
+            className="w-full md:max-w-2xl pt-10 md:pt-20"
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-background/60 backdrop-blur-md border border-primary/20 mb-6">
               <Sparkles className="w-4 h-4 text-primary" />

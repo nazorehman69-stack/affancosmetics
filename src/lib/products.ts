@@ -35,12 +35,6 @@ export const heroSlides = [
     cta: "Explore Now",
   },
   {
-    image: img("photo-1583241800698-9c3550778cdc"),
-    title: "Luxury Made Affordable",
-    subtitle: "Hand-picked luxury cosmetics",
-    cta: "View Collection",
-  },
-  {
     image: img("photo-1503236823255-94609f598e71"),
     title: "Bold Lips, Bold You",
     subtitle: "New lipstick shades just landed",
